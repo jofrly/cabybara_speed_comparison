@@ -1,0 +1,15 @@
+<div class="flex flex-col items-center justify-center gap-2" data-controller="increment">
+  <div class="counter" data-increment-target="counter">
+    <% if @current_count.zero? %>
+      <%= @current_count %>
+    <% else %>
+      <%= @current_count %> incremented with ruby
+    <% end %>
+  </div>
+
+  <%= link_to "Increment",
+              root_path(count: @next_count),
+              class: "p-2 border border-gray-500",
+              data: { action: "click->increment#increment" }
+  %>
+</div>
